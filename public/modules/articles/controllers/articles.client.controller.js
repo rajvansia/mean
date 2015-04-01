@@ -10,6 +10,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			// Create new Article object
 			var article = new Articles({
 				title: this.title,
+				loc: this.loc,
 				content: this.content
 			});
 
@@ -19,6 +20,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
 				// Clear form fields
 				$scope.title = '';
+				$scope.loc = '';
 				$scope.content = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;

@@ -1,21 +1,33 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1>Edit Article</h1>
+		<h1>Edit Job</h1>
 	</div>
 	<div class="col-md-12">
 		<form name="articleForm" class="form-horizontal" data-ng-submit="update(articleForm.$valid)" novalidate>
 			<fieldset>
 				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.title.$invalid}">
-					<label class="control-label" for="title">Title</label>
+					<label class="control-label" for="title">Job Title</label>
 					<div class="controls">
 						<input name="title" type="text" data-ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
 					</div>
 					<div ng-show="submitted && articleForm.title.$invalid" class="help-block">
-						<p ng-show="articleForm.title.$error.required" class="text-danger">Title is required</p>
+						<p ng-show="articleForm.title.$error.required" class="text-danger">Job title is required</p>
+					</div>
+				</div>
+					<div class="form-group" ng-class="{ 'has-error': articleForm.tagtech.$dirty && articleForm.tagtech.$invalid }">
+					<label class="control-label" for="tagtech">Job Tags</label>
+					<div class="controls">
+						<input name="tagtech" type="text" data-ng-model="article.tagtech" id="tagtech" class="form-control" placeholder="As400" required>
+					</div>
+				</div>
+					<div class="form-group" ng-class="{ 'has-error': articleForm.loc.$dirty && articleForm.loc.$invalid }">
+					<label class="control-label" for="loc">Job Location</label>
+					<div class="controls">
+						<input name="loc" type="text" data-ng-model="article.loc" id="loc" class="form-control" placeholder="New Jersey" required>
 					</div>
 				</div>
 				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid}">
-					<label class="control-label" for="content">Content</label>
+					<label class="control-label" for="content">Job Description</label>
 					<div class="controls">
 						<textarea name="content" data-ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content" required></textarea>
 					</div>

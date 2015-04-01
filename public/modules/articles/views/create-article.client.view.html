@@ -1,18 +1,30 @@
 <section data-ng-controller="ArticlesController">
 	<div class="page-header">
-		<h1>New Article</h1>
+		<h1>Post New Job</h1>
 	</div>
 	<div class="col-md-12">
 		<form name="articleForm" class="form-horizontal" data-ng-submit="create()" novalidate>
 			<fieldset>
 				<div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
-					<label class="control-label" for="title">Title</label>
+					<label class="control-label" for="title">Job Title</label>
 					<div class="controls">
 						<input name="title" type="text" data-ng-model="title" id="title" class="form-control" placeholder="Title" required>
 					</div>
 				</div>
+					<div class="form-group">
+					<label class="control-label" for="loc">Job Location</label>
+					<div class="controls">
+						<input name="loc" type="text" data-ng-model="loc" id="loc" class="form-control" placeholder="New Jersey" required>
+					</div>
+				</div>
 				<div class="form-group">
-					<label class="control-label" for="content">Content</label>
+					<label class="control-label" for="tagtech">Job Tag</label>
+					<div class="controls">
+						<input name="tagtech" type="text" data-ng-model="tagtech" id="tagtech" class="form-control" placeholder="AS400" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="content">Job Description</label>
 					<div class="controls">
 						<textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
 					</div>

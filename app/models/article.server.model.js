@@ -25,6 +25,16 @@ var ArticleSchema = new Schema({
 		default: '',
 		trim: true
 	},
+	loc: {
+		type: String,
+		default: 'fags',
+		trim: true
+	},
+	tagtech: {
+		type: String,
+		default: 'As400',
+		trim: true
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

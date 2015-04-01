@@ -10,6 +10,12 @@
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
 	</div>
+		<div class="pull-right" data-ng-show="authentication.user._id !== article.user._id">
+		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+	
+	</div>
 	<small>
 		<em class="text-muted">
 			Posted on
@@ -18,5 +24,15 @@
 			<span data-ng-bind="article.user.displayName"></span>
 		</em>
 	</small>
-	<p class="lead" data-ng-bind="article.content"></p>
+
+		<h4>		
+			Responsibilites: 
+			<span class="list-group-item-text" data-ng-bind="article.content"></span>
+		</h4>
+		
+		<h5>		
+			Skills:
+			<span class="list-group-item-text" data-ng-bind="article.tagtech"></span>
+		</h5>
+		
 </section>
